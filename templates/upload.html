@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>File Upload and Infection</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    h1, h2 {
+      color: #333;
+    }
+    form {
+      margin-bottom: 20px;
+    }
+    input[type="file"] {
+      margin-bottom: 10px;
+    }
+    button {
+      margin-left: 10px;
+      padding: 5px 10px;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    li {
+      margin: 5px 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>Dosya Yükleme ve Enfekte Etme</h1>
+  <form method="POST" enctype="multipart/form-data" action="/upload">
+    <label for="files">Dosya Yükle:</label>
+    <input type="file" name="files[]" id="files" multiple required>
+    <input type="submit" value="Yükle">
+  </form>
+
+  <h2>Enfekte Edilmiş Dosyalar</h2>
+  <ul>
+    {% for filename in infected_files %}
+    <li>
+      <a href="{{ url_for('download_infected_file', filename=filename) }}">{{ filename }}</a>
+      <form method="POST" action="/delete/{{ filename }}" style="display:inline;">
+        <button type="submit">Sil</button>
+      </form>
+    </li>
+    {% endfor %}
+  </ul>
+</body>
+</html>
