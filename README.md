@@ -1,7 +1,7 @@
 
-# WebVenom
+# WebVenom Web Application
 
-WebVenom is a Flask-based web application designed to allow users to upload files and infect them with malicious payloads using msfvenom. This project integrates Python and msfvenom to provide a simple interface for file uploading, infection, and downloading of the infected files.
+WebVenom Web Application is a Flask-based web application designed to allow users to upload files and infect them with malicious payloads using msfvenom. This project integrates Python and msfvenom to provide a simple interface for file uploading, infection, and downloading of the infected files.
 
 ## Features
 
