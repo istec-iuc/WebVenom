@@ -3,7 +3,7 @@
 A project that adds malware to office and pdf files over the web.
 
 
-# Msfvenom File Infector
+# WebVenom Console Application
 
 This project is a Python script that uses `msfvenom` to infect files in the `upload` directory and saves the infected files in the `infected` directory. The script can either take a reverse shell address from the user or read it from a `config.fkn` file if available.
 
